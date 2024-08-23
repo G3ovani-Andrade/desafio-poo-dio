@@ -1,30 +1,14 @@
 package desafio.dominio;
 
 
-public class Curso
+public class Curso extends Conteudo
 {
-	private String titulo;
-	private String descricao;
 	private int cargaHoraria;
 
-	public String getTitulo()
+	@Override
+	public double calcularXp()
 	{
-		return this.titulo;
-	}
-
-	public void setTitulo( String titulo )
-	{
-		this.titulo = titulo;
-	}
-
-	public String getDescricao()
-	{
-		return this.descricao;
-	}
-
-	public void setDescricao( String descricao )
-	{
-		this.descricao = descricao;
+		return XP_PADRAO * this.cargaHoraria;
 	}
 
 	public int getCargaHoraria()
@@ -40,8 +24,9 @@ public class Curso
 	@Override
 	public String toString()
 	{
-		return "Curso [titulo=" + this.titulo + ", descricao=" + this.descricao + ", cargaHoraria=" + this.cargaHoraria
+		return "Curso [titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", cargaHoraria=" + this.cargaHoraria
 				+ "]";
 	}
+
 
 }
